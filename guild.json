@@ -1,0 +1,31 @@
+{
+    "Guilds" : [
+        {
+            "ID" : 924036385667698688, 
+            "Prefix": "!",
+            
+            "zezak.all" : [613402918774636570],
+                
+                "zezak.mod" : "",
+                    "zezak.ban" : ["ban_members"],
+                    "zezak.case" : [],
+                    "zezak.delwarn" : [],
+                    "zezak.editwarn" : [],
+                    "zezak.kick" : ["kick_members"],
+                    "zezak.mute" : [],
+                    "zezak.nick" : ["manage_nicknames"],
+                    "zezak.pardon" : ["ban_members"],
+                    "zezak.purge": [],
+                    "zezak.unmute" : [],
+                    "zezak.warn" : [],
+                
+                "zezak.manager" : [],
+                    "zezak.automod"  : [],
+                    "zezak.autorole" : [],
+                    "zezak.dashboard" : ["administrator"],
+                    "zezak.role" : ["manage_roles"],
+                    "zezak.lock" : ["manage_channel"],
+                    "zezak.lockdown" : []
+        }
+    ]
+}
