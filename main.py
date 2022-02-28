@@ -44,7 +44,13 @@ def id_(i : int, ctx : commands.Context):
             except commands.ChannelNotFound:
                 return None
 
-client = commands.Bot(command_prefix = prefix, intents = discord.Intents.all())
+client = commands.Bot(command_prefix = prefix, intents = discord.Intents.all(), help_command = None)
+
+@client.command(aliases = ["help"])
+async def help_cmd(ctx, c):
+    if not c:
+        await ctx.send(discord.Embed(title = "Zezak", description = "A configurable and flexible multi-purpose bot created in Python.\n\n[Commands](https://carrotguy69.github.io/Zezak/)\n[GitHub](https://www.github.com/carrotguy69/Zezak)\n\n**Modules**:\nGeneral\nConfig", colour = discord.Colour(345544)))
+
 
 for cog in os.listdir("./cogs"):
     if cog.endswith(".py") and cog.lower() != "__init__.py":
