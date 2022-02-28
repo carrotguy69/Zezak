@@ -1,2 +1,3 @@
-.token.json
+*.json
+!commands.json
 *.txt
