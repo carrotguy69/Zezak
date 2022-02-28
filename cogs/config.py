@@ -14,57 +14,53 @@ class config(commands.Cog):
     @commands.command()
     async def permit(self, ctx, group, perm = None):
         """
-        **Description:** Allow a user or role to use mod/admin commands.\n
-        **Syntax:** `%spermit {user | role} {permission}`\n
-        **Example:** `%spermit @austin zezak.ban`\n\n
+        **Description:** Allow a user or role to use mod/admin commands.
+        **Syntax:** `%spermit {user | role} {permission}`
+        **Example:** `%spermit @austin zezak.ban`
         
-        Use `%spermit help` to see a list of permissions.\n
+        Use `%spermit help` to see a list of permissions.
         """ %((str(prefix(self.client, ctx.message))), (str(prefix(self.client, ctx.message))), (str(prefix(self.client, ctx.message))))
 
         if group == "help":
             
             dir_(1)
             with open("Permissions", "r+") as f: 
-                return await ctx.reply(f.read())
+                return await ctx.reply(f.read(), mention_author = False)
 
-        result = process.extractOne(group, ctx.guild.members)
-
-        if fuzz.ratio(group, result) > 95:
-            obj = result
-        
-        else:    
-            result = process.extractOne(group, ctx.guild.roles)
+        if group:
+            a = [m.name for m in ctx.guild.members]
+            result = process.extractOne(group, a)
             
-            if fuzz.ratio(group, result) > 95:
+            if fuzz.ratio(group, result) > 90:
                 obj = result
             
-            else:
-                result = process.extractOne(group, ctx.guild.text_channels)
+            else:    
+                result = process.extractOne(group, ctx.guild.roles)
                 
-                if fuzz.ratio(group, result) > 95:
+                if fuzz.ratio(group, result) > 90:
                     obj = result
                 
                 else:
-                    obj = id_(clean(group), ctx)
+                    result = process.extractOne(group, ctx.guild.text_channels)
+                    
+                    if fuzz.ratio(group, result) > 90:
+                        obj = result
+                    
+                    else:
+                        obj = id_(clean(group), ctx)
 
-                    if obj == None:
-                        raise commands.MemberNotFound
-        
-        await ctx.send(obj.mention)
-        
-
-
-        
-
-        
-    
-    @permit.error
-    async def permit_error(self, ctx, e):
-        if isinstance(e, commands.MissingRequiredArgument):
+                        if obj == None:
+                            return print("Member not found!")
             
-            dir_(1)
-            with open("Permissions", "r+") as f:
-                await ctx.reply(f.read())
+            await ctx.send(obj.mention)
+    
+    # @permit.error
+    # async def permit_error(self, ctx, e):
+    #     if isinstance(e, commands.MissingRequiredArgument):
+            
+    #         dir_(1)
+    #         with open("Permissions", "r+") as f:
+    #             return await ctx.reply(f.read(), mention_author = False)
 
 def setup(client):
     client.add_cog(config(client))
