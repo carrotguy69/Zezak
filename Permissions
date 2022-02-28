@@ -1,0 +1,26 @@
+**Permissions List**
+Each of these permissions allows a user/role to perform the corresponding action with the bot.
+
+**zezak.all** - Grants all permissions to a user
+
+    **zezak.mod** - Grants all of the permissions in the list below
+        
+        zezak.ban - Ban a user.
+        zezak.case - See details of a mod action.
+        zezak.delwarn - Remove a warning from a user.
+        zezak.editwarn - Edit a users warning.
+        zezak.kick - Kick a user from the server.
+        zezak.mute - Mute a user in the server.
+        zezak.nick - Assign a nickname to a user.
+        zezak.pardon - Unban a user.
+        zezak.unmute - Remove a mute from a user.
+        zezak.warn - Issue a warning to a user.
+
+    **zezak.manager** - Grants all of the permissions in the list below
+        
+        zezak.automod - Configure the automod filter.
+        zezak.autorole - Configure the role users get when they join.
+        zezak.dashboard - Access the bot dashboard GUI.
+        zezak.role - Add roles to users
+        zezak.lock - Lock a channel from typing.
+        zezak.lockdown - Lockdown a server from typing.

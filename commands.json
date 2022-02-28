@@ -1,0 +1,25 @@
+{
+    "modules" : {
+
+        "general" : [
+            {
+                "Name" : "help",
+                "Description" : "Lists bot commands and other useful info.",
+                "Syntax" : "`%shelp {category | command}`",
+                "Example" : "`%shelp mute`",
+                "Notes" : null
+            }
+        ],
+        
+        "config" : [
+            {
+                "Name" : "permit",
+                "Description" : "Allows a user or role to use mod/admin commands.",
+                "Syntax" : "`%spermit {user | role} {permission}`",
+                "Example" : "`%spermit @austin zezak.ban`",
+                "Notes" : "Use `%spermit help` to see all of the bot permissions."
+            }
+        ]
+
+    }
+}
