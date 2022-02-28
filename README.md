@@ -1,2 +1,2 @@
 # Zezak
- discord bot
+retarded discord bot
