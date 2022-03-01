@@ -1,3 +1,4 @@
 token.json
 guild.json
 *.txt
+__pycache__/
