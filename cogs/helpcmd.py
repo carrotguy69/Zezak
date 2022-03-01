@@ -1,5 +1,5 @@
 import discord, json, os
-from fuzzywuzzy import process
+from thefuzz import process
 from discord.ext import commands
 from main import dir_, my_colour, prefix
 

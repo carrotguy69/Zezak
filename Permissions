@@ -24,3 +24,5 @@ Each of these permissions allows a user/role to perform the corresponding action
         zezak.role - Add roles to users
         zezak.lock - Lock a channel from typing.
         zezak.lockdown - Lockdown a server from typing.
+
+Grant a user or role permissions by using {}.

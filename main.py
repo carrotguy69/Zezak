@@ -1,4 +1,4 @@
-import discord, json, os, colorama
+import discord, json, os
 from discord import Activity, ActivityType
 from discord.ext import commands
 
